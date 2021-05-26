@@ -1,7 +1,7 @@
 {
   "name": "react-node-boilerplate",
   "version": "1.0.0",
-  "description": "React Node Boilerplate is a MERN stack with GraphQL.",
+  "description": "A Netflix Search Engine using React Node Boilerplate.",
   "scripts": {
     "dev": "lerna exec -- npm run --parallel dev",
     "lint": "eslint '**/*.{js,jsx}'",
@@ -46,12 +46,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/IgorMCesar/react-node-boilerplate.git"
+    "url": "git+https://github.com/Mauville/NetflixMERAN.git"
   },
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/IgorMCesar/react-node-boilerplate/issues"
-  },
-  "homepage": "https://github.com/IgorMCesar/react-node-boilerplate#readme"
+  "license": "ISC"
 }

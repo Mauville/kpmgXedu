@@ -9,7 +9,6 @@ import loggerConfig from './config/loggerConfig';
 
 import typeDefs from './graphql/schemas/schemas';
 import resolvers from './graphql/resolvers/resolvers';
-import schemaDirectives from './graphql/directives/directives';
 
 const { NODE_ENV, SESSION_NAME, SESSION_SECRET, SESSION_MAX_AGE, MONGO_DB_URI, PORT } = process.env;
 
@@ -48,16 +47,15 @@ app.use(
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  schemaDirectives,
-  playground:
-    NODE_ENV.trim() !== 'development'
-      ? false
-      : {
-          settings: {
-            'request.credentials': 'include',
-            'schema.polling.enable': false
-          }
-        },
+  playground: true,
+  // NODE_ENV.trim() !== 'development'
+  //   ? false
+  //   : {
+  //       settings: {
+  //         'request.credentials': 'include',
+  //         'schema.polling.enable': false
+  //       }
+  //     },
   context: ({ req, res }) => ({ req, res })
 });
 
@@ -78,7 +76,8 @@ mongoose.connect(MONGO_DB_URI, { useNewUrlParser: true });
 mongoose.connection.once('open', () => {
   const port = PORT || 8080;
   app.listen({ port }, () => {
-    console.log(`Server running on port ${port}`);
+    console.log(`Server running on port ${port} and ${server.graphqlPath}`);
   });
 });
+mongoose.set('debug', true);
 mongoose.connection.on('error', error => console.error(error));

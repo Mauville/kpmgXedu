@@ -1,4 +1,3 @@
-import user from './user';
-import root from './root';
+import movie from './movie';
 
-export default [user, root];
+export default [movie];

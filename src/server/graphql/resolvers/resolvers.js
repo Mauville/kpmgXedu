@@ -1,3 +1,3 @@
-import user from './user';
+import movie from './movie';
 
-export default [user];
+export default [movie];
