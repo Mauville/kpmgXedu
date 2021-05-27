@@ -69,7 +69,7 @@ The easiest way is to clone the repository and run `npm run install:all`:
 
 ```bash
 # Get the latest version
-git clone https://github.com/IgorMCesar/react-node-boilerplate.git myproject
+git clone https://github.com/Mauville/WonderFlix.git myproject
 
 # Change current directory to the newly created one
 cd myproject
