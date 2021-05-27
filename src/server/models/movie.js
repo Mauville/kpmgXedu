@@ -29,7 +29,6 @@ const movieSchema = new Schema({
   // TODO Change to array
   director: String,
   description: String,
-  // TODO change to date
   date_added: String,
   country: String,
   // TODO change to array
