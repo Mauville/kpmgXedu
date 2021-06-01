@@ -4,6 +4,7 @@
   "description": "A Netflix Search Engine using React Node Boilerplate.",
   "scripts": {
     "dev": "lerna exec -- npm run --parallel dev",
+    "start": "lerna exec -- npm run --parallel dev",
     "lint": "eslint '**/*.{js,jsx}'",
     "lint:fix": "npm run lint -- --fix",
     "test": "lerna run --parallel test",
