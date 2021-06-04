@@ -15,11 +15,13 @@ const App = props => {
   return (
     <ConnectedRouter history={props.history}>
       <CheckIfLoggedIn>
-        <Switch>
+        <Switch> 
           <PrivateRoute exact path="/" component={DashboardPage} />
           <GuestRoute exact path="/login" component={LoginPage} />
           <GuestRoute exact path="/register" component={RegisterPage} />
-          <Route path="/busqueda" component={Busqueda} />
+          <div className='container'>
+          <GuestRoute path="/busqueda" component={Busqueda} />
+          </div>
           { <Route component={PageNotFound} /> }
         </Switch>
       </CheckIfLoggedIn>
