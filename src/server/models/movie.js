@@ -40,9 +40,9 @@ movieSchema.statics.findMovieByTitle = async function(movieTitle) {
   return this.find({ title: movieTitle });
 };
 
-// TODO   ANDY Given an actor name Obtain a list with the movies and a list with the TV shows where he/she has participated
+// Given an actor name Obtain a list with the movies and a list with the TV shows where he/she has participated
 movieSchema.statics.actorMovies = async function(actorName) {
-  // return (this.estimatedDocumentCount());
+  return this.find({ cast: actorName });
 };
 
 // Total number of movies and TV shows
@@ -57,7 +57,7 @@ movieSchema.statics.moviesPerCountry = async function(country) {
 
 // Total number of TV shows for a given release year
 movieSchema.statics.moviesPerYear = async function(year) {
-  return this.countDocuments({ type: 'TV Show', year: year });
+  return this.countDocuments({ type: 'TV Show', release_year: year });
 };
 
 const Movie = model('Movie', movieSchema);
