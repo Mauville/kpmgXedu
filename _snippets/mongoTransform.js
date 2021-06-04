@@ -1,9 +1,9 @@
 use flix
 db.redacted.aggregate([
    { $project:
-        { cast : {$split: ["$cast", ","]},
-         listed_in : {$split: ["$listed_in", ","]},
-         director : {$split: ["$director", ","]},
+        { cast : {$split: ["$cast", ", "]},
+         listed_in : {$split: ["$listed_in", ", "]},
+         director : {$split: ["$director", ", "]},
          country: 1,
          date_added: 1,
          duration: 1,
