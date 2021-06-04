@@ -5,8 +5,6 @@ export default {
     mediaInfo: async (parent, args, context, info) => {
       return Movie.findMovieByTitle(args.title);
     },
-    // TODO actorMovies (actor:String): [Media]
-    // Will the movies get automagically cast to media?
     actorMovies: async (parent, args, context, info) => {
       return Movie.actorMovies(args.actor);
     },
