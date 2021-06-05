@@ -1,6 +1,6 @@
 import React, { Component, Fragment, useState } from 'react';
 import { queries } from './graphql';
-//import { useQuery } from '@apollo/client';
+// import { useQuery } from '@apollo/client';
 import Busqueda from './components/Busqueda';
 import Resultados from './components/Resultados';
 import { render } from 'react-dom';
@@ -64,7 +64,7 @@ MediaCount = () => {
   if (error) return <p>Error :(</p>;
 
   return data.mediaCount;
-}*/
+} */
 
   PerCountry = filter => {
     this.props.client

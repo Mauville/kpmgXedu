@@ -8,7 +8,7 @@ const Busqueda = ({ execute, option, changeOption }) => {
 
   const [error, actualizarError] = useState(false);
 
-  //Se ejecuta cada vez que el usaurio escribe en los input
+  // Se ejecuta cada vez que el usaurio escribe en los input
   const actualizarState = e => {
     actualizarCita({
       ...cita,
@@ -16,14 +16,14 @@ const Busqueda = ({ execute, option, changeOption }) => {
     });
   };
 
-  //Extraer Valores
+  // Extraer Valores
   const { mascota } = cita;
 
-  //Cuando el usuario presione agregar cita
+  // Cuando el usuario presione agregar cita
   const submitCita = e => {
     e.preventDefault();
 
-    //Validar
+    // Validar
     if (mascota.trim() === '') {
       actualizarError(true);
       return;
@@ -41,10 +41,10 @@ const Busqueda = ({ execute, option, changeOption }) => {
       execute.PerActor(mascota);
     }
 
-    //Eliminar el mensaje previo
+    // Eliminar el mensaje previo
     actualizarError(false);
 
-    //Reiniciar el form
+    // Reiniciar el form
     actualizarCita({
       mascota: ''
     });
