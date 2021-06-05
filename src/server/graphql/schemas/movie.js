@@ -3,7 +3,7 @@ import { gql } from 'apollo-server-express';
 export default gql`
   type Media {
     showID: String
-    mediatype: String
+    type: String
     title: String
     release_year: Int
     rating: String
@@ -17,7 +17,7 @@ export default gql`
   }
   type Query {
     #Information
-    mediaInfo(title: String): Media
+    mediaInfo(title: String): [Media]
     actorMovies(actor: String): [Media]
     #Stats
     mediaCount: Int

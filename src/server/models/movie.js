@@ -6,11 +6,11 @@
  Required methods are:
      Queries to obtain detailed information about each of the entities in the database
 TODO    Given a movie name
-           Obtain the director, cast, countries and release year
+           Obtain the director, cast, countries and release year YA
 TODO    Given an actor name
-           Obtain a list with the movies and a list with the TV shows where he/she has participated
+           Obtain a list with the movies and a list with the TV shows where he/she has participated 
 TODO    Given a TV show name
-           Obtain the director, cast, countries and release year
+           Obtain the director, cast, countries and release year YA
 */
 
 import mongoose from 'mongoose';
@@ -35,10 +35,6 @@ const movieSchema = new Schema({
 // Movie with title
 movieSchema.statics.findMovieByTitle = function(movieTitle) {
   console.log('Received movietitle from GraphQL: ', movieTitle);
-  this.findById(movieTitle, function(err, docs) {
-    if (err) throw err;
-    console.log('This is what Mongoose Returned: ', JSON.stringify(docs));
-  });
   return this.find({ title: movieTitle });
 };
 
