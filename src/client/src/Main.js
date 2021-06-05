@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { queries } from './graphql';
 import { useQuery } from '@apollo/client';
+import Busqueda from './components/Busqueda';
+import Resultados from './components/Resultados';
 
 // MOVIES_PER_COUNTRY
 function MoviesPerCountry(countryName) {
@@ -62,10 +64,22 @@ function Main() {
   // console.group(MediaInfo('3%'));
 
   return (
-    <div>
-      <h2>My first Apollo app 🚀</h2>
-      <MediaCount />
+    <Fragment>
+    <h2>My first Apollo app 🚀</h2>
+    <div className='container'>
+      <div className="row">
+        <div>
+          <Busqueda/>
+        </div>
+        <div>
+        <Resultados
+        
+        />
+        <MediaCount />
+        </div>
+      </div>
     </div>
+    </Fragment>
   );
 }
 

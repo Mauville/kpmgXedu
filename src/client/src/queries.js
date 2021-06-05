@@ -14,18 +14,8 @@ export const MEDIA_INFO = gql`
 export const ACTOR_MOVIES = gql`
   query actorMovies($actor: String!) {
     actorMovies(actor: $actor) {
-      mediatype
       title
-      showID
-      release_year
-      rating
-      listed_in
-      duration
-      director
-      description
-      date_added
-      country
-      cast
+      type
     }
   }
 `;
