@@ -12,7 +12,7 @@ export default gql`
     listed_in: String
     duration: String
     # TODO Change to array
-    #director: [String]
+    #director: [String
     director: String
     description: String
     date_added: String
