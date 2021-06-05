@@ -6,11 +6,11 @@
  Required methods are:
      Queries to obtain detailed information about each of the entities in the database
 TODO    Given a movie name
-           Obtain the director, cast, countries and release year
+           Obtain the director, cast, countries and release year YA
 TODO    Given an actor name
-           Obtain a list with the movies and a list with the TV shows where he/she has participated
+           Obtain a list with the movies and a list with the TV shows where he/she has participated 
 TODO    Given a TV show name
-           Obtain the director, cast, countries and release year
+           Obtain the director, cast, countries and release year YA
 */
 
 import mongoose from 'mongoose';
@@ -18,25 +18,23 @@ import mongoose from 'mongoose';
 const { Schema, model } = mongoose;
 
 const movieSchema = new Schema({
-  mediatype: String,
+  show_id: String,
+  type: String,
   title: String,
-  showID: String,
   release_year: Number,
   rating: String,
-  // TODO Change to array
-  listed_in: String,
+  listed_in: [String],
   duration: String,
-  // TODO Change to array
-  director: String,
+  director: [String],
   description: String,
   date_added: String,
   country: String,
-  // TODO change to array
-  cast: String
+  cast: [String]
 });
 
 // Movie with title
-movieSchema.statics.findMovieByTitle = async function(movieTitle) {
+movieSchema.statics.findMovieByTitle = function(movieTitle) {
+  console.log('Received movietitle from GraphQL: ', movieTitle);
   return this.find({ title: movieTitle });
 };
 
@@ -60,6 +58,6 @@ movieSchema.statics.moviesPerYear = async function(year) {
   return this.countDocuments({ type: 'TV Show', release_year: year });
 };
 
-const Movie = model('Movie', movieSchema);
+const Movie = model('movies', movieSchema);
 
 export default Movie;
