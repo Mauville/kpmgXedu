@@ -1,18 +1,9 @@
 import React from 'react';
-import Main from './Main';
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
-
-const client = new ApolloClient({
-  uri: 'http://localhost:8080/graphql',
-  cache: new InMemoryCache()
-});
+import 'antd/dist/antd.css';
+import LoginFormPage from './components/pages/LoginFormPage';
 
 function App() {
-  return (
-    <ApolloProvider client={client}>
-      <Main />
-    </ApolloProvider>
-  );
+  return <LoginFormPage />;
 }
 
 export default App;
